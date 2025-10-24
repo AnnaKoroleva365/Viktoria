@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>С Днем Рождения, Викочка!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Теплая Роза (Warm Rose) - (bg-rose-50, text-rose-800, accent: bg-pink-500) --><!-- Application Structure Plan: Простая, центрированная карточка (card) для максимального эмоционального воздействия. Основной акцент на большом заголовке, фото и тексте поздравления. Структура: Фон -> Центрированный Контейнер-Карточка -> Заголовок -> Сердце (объемное) -> Теплый Текст -> Подпись. --><!-- Visualization & Content Choices: Текст поздравления -> Цель: Передача эмоций -> Форматированный, душевный текст с акцентом на пожеланиях. Сердце -> Цель: Передача любви и нежности. Дизайн: Плавные тени и градиенты для создания мягкого, теплого ощущения, а для сердца - яркость и объем. --><!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --><style>
+        .font-decorative {
+            font-family: 'Georgia', serif; /* Используем распространенный декоративный шрифт */
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+        /* Стили для объемного сердца */
+        .heart {
+            position: relative;
+            width: 150px; /* Размер сердца */
+            height: 135px; /* Размер сердца */
+            background-color: #ff1493; /* Ярко-розовый */
+            transform: rotate(-45deg);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3), 
+                        inset -5px -5px 10px rgba(255, 255, 255, 0.5), 
+                        inset 5px 5px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 20px; /* Скругление углов для базовой формы */
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%); /* Градиент для объема */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .heart:hover {
+            transform: rotate(-45deg) scale(1.05);
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.4), 
+                        inset -7px -7px 12px rgba(255, 255, 255, 0.6), 
+                        inset 7px 7px 12px rgba(0, 0, 0, 0.25);
+        }
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 150px;
+            height: 135px;
+            background-color: #ff1493; /* Ярко-розовый */
+            border-radius: 50%; /* Для создания округлых частей сердца */
+            background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%); /* Градиент для объема */
+            box-shadow: inherit; /* Наследуем тень для согласованности */
+        }
+        .heart::before {
+            top: -75px; /* Смещение для верхней левой части */
+            left: 0;
+        }
+        .heart::after {
+            left: 75px; /* Смещение для верхней правой части */
+            top: 0;
+        }
+    </style>
+</head>
+<body class="bg-rose-50 min-h-screen flex items-center justify-center p-4">
+
+    <div id="birthday-card" class="bg-white/90 backdrop-blur-sm p-6 sm:p-10 md:p-12 max-w-2xl w-full rounded-3xl shadow-2xl border-4 border-pink-300 transform transition-all duration-500 hover:shadow-pink-300/70">
+
+        <header class="text-center mb-8">
+            <h1 class="text-5xl sm:text-6xl font-extrabold text-pink-600 font-decorative leading-tight">
+                С Днём Рождения, Викочка!
+            </h1>
+            <p class="text-xl text-rose-500 mt-2 font-light">
+                Наш самый светлый человечек
+            </p>
+        </header>
+
+        <!-- Блок для объемного ярко-розового сердца --><div class="flex justify-center mb-8">
+            <div class="heart-container flex items-center justify-center w-60 h-60 sm:w-72 sm:h-72 rounded-full transform rotate-45">
+                <div class="heart"></div>
+                <div class="absolute text-white font-bold text-xl sm:text-2xl transform -rotate-45" style="z-index: 2;">
+                    ❤️
+                </div>
+            </div>
+        </div>
+
+        <!-- Теплое Поздравление --><main class="text-center">
+            <p class="text-lg sm:text-xl text-rose-800 mb-6 leading-relaxed font-decorative italic">
+                Дорогая Викочка!
+            </p>
+            <p class="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
+                Сегодня тот самый день, когда мир стал чуточку светлее и добрее благодаря твоему появлению. От всего сердца поздравляем тебя с Днем Рождения! Ты — невероятное сочетание нежности и силы, искренности и мудрости.
+            </p>
+            <p class="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
+                Пусть каждый твой новый день будет наполнен волшебством и вдохновением. Желаем тебе бесконечного счастья, крепкого здоровья, успеха во всех начинаниях и чтобы рядом всегда были те, кто любит тебя так же сильно, как и ты их.
+            </p>
+            <p class="text-base sm:text-lg text-gray-700 leading-relaxed font-bold">
+                Сияй, вдохновляй и просто будь счастлива. Мы тебя очень любим!
+            </p>
+        </main>
+
+        <footer class="text-center mt-8 pt-4 border-t border-pink-200">
+            <p class="text-rose-500 text-lg font-semibold">
+                С наилучшими пожеланиями, твои любящие сердца.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // Добавляем эффект градиента на фон, чтобы было еще душевнее
+        document.body.style.background = 'linear-gradient(135deg, #fff7f9 0%, #fef3f4 50%, #fce7f3 100%)';
+    </script>
+</body>
+</html>
